@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Payroll information
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "employment",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="first-job" method="post" class="form">
+        {% from 'input/macro.njk' import input %}
+        <h2 class="nhsuk-heading--l">Payroll information</h2>
+        {{ input({
+          "label": {
+            "text": "What is your payroll number?"
+          },
+          "hint": {
+            "text": "This can be found on a payslip. Your employer or payroll department will be able to tell you this."
+          },
+          "id": "payroll",
+          "name": "payroll",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

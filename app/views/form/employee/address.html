@@ -1,0 +1,140 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Address
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "date-of-birth",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="national-insurance" method="post" class="form">
+        <h2 class="nhsuk-heading--l">What is your home address</h2>
+        {% from 'fieldset/macro.njk' import fieldset %}
+        {% from "input/macro.njk" import input %}
+        {% from 'button/macro.njk' import button %}
+        {% from 'select/macro.njk' import select %}
+        {% from 'radios/macro.njk' import radios %}
+        {% from 'details/macro.njk' import details %}
+
+        {% set manualEntry %}
+          {% call fieldset({
+            legend: {
+              "text": "Manually enter your address",
+              "classes": "nhsuk-fieldset__legend--l"
+            }
+          }) %}
+
+            {{ input({
+              label: {
+                "html": 'Building and street <span class="nhsuk-u-visually-hidden">line 1 of 2</span>'
+              },
+              "id": "address-line-1",
+              "name": "address-line-1"
+            }) }}
+
+            {{ input({
+              label: {
+                "html": '<span class="nhsuk-u-visually-hidden">Building and street line 2 of 2</span>'
+              },
+              "id": "address-line-2",
+              "name": "address-line-2"
+            }) }}
+
+            {{ input({
+              label: {
+                "text": "Town or city"
+              },
+              "classes": "nhsuk-u-width-two-thirds",
+              "id": "address-town",
+              "name": "address-town"
+            }) }}
+
+            {{ input({
+              label: {
+                "text": "County"
+              },
+              "classes": "nhsuk-u-width-two-thirds",
+              "id": "address-county",
+              "name": "address-county"
+            }) }}
+
+            {{ input({
+              label: {
+                "text": "Postcode"
+              },
+              "classes": "nhsuk-input--width-10",
+              "id": "address-postcode",
+              "name": "address-postcode"
+            }) }}
+
+          {% endcall %}
+        {% endset -%}
+
+        {{ input({
+          "label": {
+            "text": "Postcode"
+          },
+          "id": "postcode-lookup",
+          "name": "postcode-lookup",
+          "classes": "nhsuk-input--width-10"
+        }) }}
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary fakeButton">
+            <span class="nhsuk-button nhsuk-button--secondary">
+            Find my address
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            {{ select({
+              "id": "select-1",
+              "name": "select-1",
+              "label": {
+                "text": "Select an address"
+              },
+              "items": [
+                {
+                  "value": 1,
+                  "text": "1 Stella House, Newcastle upon Tyne, NE15 8NY"
+                },
+                {
+                  "value": 2,
+                  "text": "2 Stella House, Newcastle upon Tyne, NE15 8NY",
+                  "selected": true
+                },
+                {
+                  "value": 3,
+                  "text": "3 Stella House, Newcastle upon Tyne, NE15 8NY"
+                }
+              ]
+            }) }}   
+          </div>
+        </details>
+        
+        {{ details({
+          "text": "I can't find my address",
+          "HTML": manualEntry
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

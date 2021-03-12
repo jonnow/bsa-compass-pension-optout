@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  First NHS job
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "payroll",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="first-opt-out" method="post" class="form">
+        
+        {{ radios({
+          "idPrefix": "first-job",
+          "name": "first-job",
+          "classes": "nhsuk-radios--inline",
+          "fieldset": {
+            "legend": {
+              "text": "Is this your first job in the NHS?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

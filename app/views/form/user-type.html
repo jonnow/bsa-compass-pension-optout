@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  User type
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "start-page",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/user-type-answer" method="post" class="form">
+        
+        {{ radios({
+          "idPrefix": "user-type",
+          "name": "user-type",
+          "fieldset": {
+            "legend": {
+              "text": "Are you completing this as an employee or as the payroll department?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "employee",
+              "text": "For myself, as an employee"
+            },
+            {
+              "value": "employer",
+              "text": "As the payroll department, as the employer"
+            }
+          ]
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

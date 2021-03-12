@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Email address
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "name",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="date-of-birth" method="post" class="form">
+        {% from 'input/macro.njk' import input %}
+
+        {{ input({
+          "label": {
+            "text": "What is your email address?",
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
+          },
+          "hint": {
+            "text": "This should be your personal email for receiving updates about your pension."
+          },
+          "id": "email",
+          "name": "email",
+          "classes": "nhsuk-input--width-10"
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

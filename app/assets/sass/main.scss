@@ -7,3 +7,15 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
+.nhsuk-details__summary {
+    &.fakeButton {
+        padding-left: 0!important;
+        &:before {
+            display: none!important;
+        }
+        span {
+            margin-top: 0!important;
+            margin-bottom: 0!important;
+        }
+    }
+}

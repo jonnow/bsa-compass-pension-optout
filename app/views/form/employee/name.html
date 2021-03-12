@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Name
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/form/user-type",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="email" method="post" class="form">
+        <h1 class="nhsuk-heading-l">What is your name?</h1>
+        {% from 'input/macro.njk' import input %}
+
+        {{ input({
+          "label": {
+            "text": "First name"
+          },
+          "id": "first-name",
+          "name": "first-name",
+          "classes": "nhsuk-input--width-10"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Last name"
+          },
+          "id": "last-name",
+          "name": "last-name",
+          "classes": "nhsuk-input--width-10"
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

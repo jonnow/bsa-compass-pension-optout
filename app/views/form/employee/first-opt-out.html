@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Pension scheme history
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "first-job",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="reason-for-leaving" method="post" class="form">
+        <h2 class="nhsuk-heading--l">NHS pension scheme history</h2>
+        {{ radios({
+          "idPrefix": "first-opt-out",
+          "name": "first-opt-out",
+          "classes": "nhsuk-radios--inline",
+          "fieldset": {
+            "legend": {
+              "text": "Is this the first time you have chosen to leave or not join the NHS Pension Scheme?",
+              "isPageHeading": false
+            }
+          },
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

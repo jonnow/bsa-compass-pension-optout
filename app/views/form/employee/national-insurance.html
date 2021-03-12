@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  National insurance number
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "address",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="employment" method="post" class="form">
+        {% from 'input/macro.njk' import input %}
+
+        {{ input({
+          "label": {
+            "text": "National insurance number",
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
+          },
+          "hint": {
+            "text": "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          "id": "national-insurance",
+          "name": "national-insurance",
+          "classes": "nhsuk-input--width-10"
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

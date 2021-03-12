@@ -1,0 +1,251 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check your answers template - NHS.UK prototype kit
+{% endblock %}
+
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "reason-for-leaving",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-u-margin-top-4">
+        Check your answers before sending your application
+      </h1>
+
+      <h2>
+        Check your answers
+      </h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Kevin Francis"
+            },
+            actions: {
+              items: [
+                {
+                  href: "name",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: "Kevin.Francis@nhs-practice.net"
+            },
+            actions: {
+              items: [
+                {
+                  href: "email",
+                  text: "Change",
+                  visuallyHiddenText: "email"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              html: "15 March 1984"
+            },
+            actions: {
+              items: [
+                {
+                  href: "date-of-birth",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: '2 Stella House<br>Newcastle upon Tyne<br>NE15 8NY'
+            },
+            actions: {
+              items: [
+                {
+                  href: "address",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "National insurance number"
+            },
+            value: {
+              text: "QQ 12 34 56 C"
+            },
+            actions: {
+              items: [
+                {
+                  href: "national-insurance",
+                  text: "Change",
+                  visuallyHiddenText: "national insurance number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name of your employer"
+            },
+            value: {
+              text: "NHS Dentists Ltd"
+            },
+            actions: {
+              items: [
+                {
+                  href: "employment",
+                  text: "Change",
+                  visuallyHiddenText: "name of your emplpoyer"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Your job title"
+            },
+            value: {
+              text: "Associate dentist"
+            },
+            actions: {
+              items: [
+                {
+                  href: "enployment",
+                  text: "Change",
+                  visuallyHiddenText: "your job title"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Payroll number"
+            },
+            value: {
+              text: "345876"
+            },
+            actions: {
+              items: [
+                {
+                  href: "payroll",
+                  text: "Change",
+                  visuallyHiddenText: "payroll number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is this your first job in the NHS?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "first-job",
+                  text: "Change",
+                  visuallyHiddenText: "is this your first job in the NHS?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is this the first time you have chosen to leave or not join the NHS Pension Scheme? "
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "first-opt-out",
+                  text: "Change",
+                  visuallyHiddenText: "Is this the first time you have chosen to leave or not join the NHS Pension Scheme?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Reason for leaving the scheme"
+            },
+            value: {
+              html: 'Secured retirement income via other means<br>In receipt of a fixed or enhanced protection certificate'
+            },
+            actions: {
+              items: [
+                {
+                  href: "reason-for-leaving",
+                  text: "Change",
+                  visuallyHiddenText: "Reason for leaving the scheme"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2>
+        Now send you application
+      </h2>
+
+      <p>
+        By submitting this notification you are confirming that:
+      </p>
+      <ul>
+        <li>I wish to opt out of pension saving.</li>
+        <li>I understand that if I opt out I will lose the right to pension contributions from my employer.</li>
+        <li>I understand that if I opt out I may have a lower income when I retire.</li>
+        <li>I understand that I cannot opt out retrospectively.</li>
+        <li>I have read the information that comes with this form and the Scheme Guide to the NHS Pension Scheme.</li>
+        <li>I understand that I am giving up my rights to any further benefits from the Scheme in this employment.</li>
+        <li>I understand that unless I am absent from duty for any reason I may apply to join or rejoin the Scheme at any time subject to the scheme rules.</li>
+        <li>I understand that either my employer or NHS Pensions may retain this form for their records.</li>
+      </ul>
+
+      <p>
+        Your details will be sent to your the NHS Business Services Authority and your employer to begin your withdrawal from the NHS pension scheme.
+      </p>
+
+      <a href="confirmation-page" class="nhsuk-button">
+        Accept and send registration
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

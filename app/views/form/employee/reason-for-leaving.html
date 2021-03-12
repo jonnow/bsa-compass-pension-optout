@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Reason for leaving
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "first-opt-out",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="check-your-answers" method="post" class="form">
+        {% from 'checkboxes/macro.njk' import checkboxes %}
+
+        {{ checkboxes({
+          "idPrefix": "reason-for-leaving",
+          "name": "reason-for-leaving",
+          "fieldset": {
+            "legend": {
+              "text": "Reason for leaving the scheme?",
+              "classes": "nhsuk-fieldset__legend--l",
+              isPageHeading: true
+            }
+          },
+          "hint": {
+            "text": "Select all options that are relevant to you."
+          },
+          "items": [
+            {
+              "value": "allowance",
+              "text": "Annual Allowance/Lifetime Allowance"
+            },
+            {
+              "value": "contributing",
+              "text": "Contributing to another pension scheme"
+            },
+            {
+              "value": "temporary",
+              "text": "Temporary opt out due to other financial priorities"
+            },
+            {
+              "value": "fixed-enhanced-protection",
+              "text": "In receipt of a fixed or enhanced protection certificate"
+            },
+            {
+              "value": "affordability",
+              "text": "Affordability"
+            },
+            {
+              "value": "secure-other-means",
+              "text": "Secured retirement income via other means",
+              "hint": {
+                "text": "For example property, investments"
+              }
+            }
+          ]
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
