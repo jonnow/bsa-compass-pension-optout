@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  User type
+  Receiving SD502
 {% endblock %}
 
 {% block outerContent %}
   {{ backLink({
-    "href": "/start-page",
+    "href": "enrollment-date",
     "text": "Back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -18,31 +18,31 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/user-type-answer" method="post" class="form">
-        
+      <form action="ea-gp-code" method="post" class="form">
+        <h2 class="nhsuk-heading--l">NHS pension scheme history</h2>
         {{ radios({
-          "idPrefix": "user-type",
-          "name": "user-type",
+          "idPrefix": "receive-sd502",
+          "name": "receive-sd502",
+          "classes": "nhsuk-radios--inline",
           "fieldset": {
             "legend": {
-              "text": "Are you completing this as an employee or as the payroll department?",
-              "classes": "nhsuk-fieldset__legend--l",
+              "text": "Did you receive the SD502 form within the opt out period for a local refund to be paid?",
               "isPageHeading": true
             }
           },
           "items": [
             {
-              "value": "employee",
-              "text": "For myself, as an employee",
+              "value": "yes",
+              "text": "Yes",
               "hint": {
-                "text": "The person that is opting out of the pension scheme"
+                "text": "Please refund any contributions locally for this period of membership."
               }
             },
             {
-              "value": "employer",
-              "text": "As the payroll department",
+              "value": "no",
+              "text": "No",
               "hint": {
-                "text": "You work for or own the business and represent the payroll department for the employer."
+                "text": "NHS Pensions will pay a refund of contribution, if eligible, on receipt of form RF12."
               }
             }
           ]

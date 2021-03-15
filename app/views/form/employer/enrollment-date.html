@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Date of birth
+  Enrollment date
 {% endblock %}
 
 {% block outerContent %}
   {{ backLink({
-    "href": "email",
+    "href": "name",
     "text": "Back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -18,21 +18,22 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="address" method="post" class="form">
+      <form action="receive-sd502" method="post" class="form">
         {% from 'date-input/macro.njk' import dateInput %}
+       
 
         {{ dateInput({
-          "id": "example",
-          "namePrefix": "example",
+          "id": "enrollment-date",
+          "namePrefix": "enrollment-date",
           "fieldset": {
             "legend": {
-              "text": "What is your date of birth?",
+              "text": "When was the member enrolled?",
               "classes": "nhsuk-label--l",
               "isPageHeading": true
             }
           },
           "hint": {
-            "text": "For example, 15 3 1984"
+            "html": "We use this date to confirm the identity of the employee. <br> For example, 15 3 2021"
           },
           "items": [
             {

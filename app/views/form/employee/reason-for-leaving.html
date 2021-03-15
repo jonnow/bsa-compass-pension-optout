@@ -18,7 +18,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="check-your-answers" method="post" class="form">
+      <form action="payroll-contact" method="post" class="form">
         {% from 'checkboxes/macro.njk' import checkboxes %}
 
         {{ checkboxes({
@@ -45,7 +45,10 @@
             },
             {
               "value": "temporary",
-              "text": "Temporary opt out due to other financial priorities"
+              "text": "Temporary opt out",
+              "hint": {
+                "text": "For example 24 hour opt out or due to other financial priorities"
+              }
             },
             {
               "value": "fixed-enhanced-protection",

@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Employer information
+  Employment details - Employment authority or General Practice
 {% endblock %}
 
 {% block outerContent %}
   {{ backLink({
-    "href": "national-insurance",
+    "href": "receive-sd502",
     "text": "Back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -18,29 +18,22 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="payroll" method="post" class="form">
+      <form action="job-code" method="post" class="form">
+
         {% from 'input/macro.njk' import input %}
-        <h2 class="nhsuk-heading--l">Employment information</h2>
+
         {{ input({
           "label": {
-            "text": "What is the name of your employer?"
+            "text": "Employment Authority (EA) or General Practice (GP) code",
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
           },
           "hint": {
-            "text": "This is the name of the business that employs you."
+            "text": "This is the 4 digit unique code for the business or practice"
           },
-          "id": "job-title",
-          "name": "job-title",
-          "classes": "nhsuk-input--width-20"
-        }) }}
-
-
-        {{ input({
-          "label": {
-            "text": "What is your job title?"
-          },
-          "id": "job-title",
-          "name": "job-title",
-          "classes": "nhsuk-input--width-20"
+          "id": "input-width-4",
+          "name": "test-width-4",
+          "classes": "nhsuk-input--width-4"
         }) }}
 
         {{ button({

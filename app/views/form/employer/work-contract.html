@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Date of birth
+  Employment details - Work contract
 {% endblock %}
 
 {% block outerContent %}
   {{ backLink({
-    "href": "email",
+    "href": "membership-number",
     "text": "Back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -18,34 +18,30 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="address" method="post" class="form">
-        {% from 'date-input/macro.njk' import dateInput %}
+      <form action="scheme-membership" method="post" class="form">
+        {% from 'radios/macro.njk' import radios %}
 
-        {{ dateInput({
-          "id": "example",
-          "namePrefix": "example",
+        {{ radios({
+          "idPrefix": "terms-of-work",
+          "name": "terms-of-work",
           "fieldset": {
             "legend": {
-              "text": "What is your date of birth?",
-              "classes": "nhsuk-label--l",
+              "text": "What is the employee's work contract?",
+              "classes": "nhsuk-fieldset__legend--l",
               "isPageHeading": true
             }
           },
-          "hint": {
-            "text": "For example, 15 3 1984"
-          },
           "items": [
             {
-              "name": "day",
-              "classes": "nhsuk-input--width-2"
+              "value": "Whole time",
+              "text": "Whole time",
+              "hint": {
+                "text": "Including full time"
+              }
             },
             {
-              "name": "month",
-              "classes": "nhsuk-input--width-2"
-            },
-            {
-              "name": "year",
-              "classes": "nhsuk-input--width-4"
+              "value": "Part time",
+              "text": "Part time"
             }
           ]
         }) }}

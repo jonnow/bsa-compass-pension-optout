@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Employer information
+  Your name
 {% endblock %}
 
 {% block outerContent %}
   {{ backLink({
-    "href": "national-insurance",
+    "href": "reference",
     "text": "Back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -18,29 +18,23 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="payroll" method="post" class="form">
+      <form action="enrollment-date" method="post" class="form">
+
         {% from 'input/macro.njk' import input %}
-        <h2 class="nhsuk-heading--l">Employment information</h2>
+
         {{ input({
           "label": {
-            "text": "What is the name of your employer?"
+            "text": "What is your name?",
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
           },
           "hint": {
-            "text": "This is the name of the business that employs you."
+            "text": "We use your name to confirm your identity as the employing authority or payroll representative."
           },
-          "id": "job-title",
-          "name": "job-title",
+          "id": "name",
+          "name": "name",
           "classes": "nhsuk-input--width-20"
-        }) }}
 
-
-        {{ input({
-          "label": {
-            "text": "What is your job title?"
-          },
-          "id": "job-title",
-          "name": "job-title",
-          "classes": "nhsuk-input--width-20"
         }) }}
 
         {{ button({

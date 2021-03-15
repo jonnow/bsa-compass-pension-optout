@@ -24,24 +24,30 @@
       <ul>
         <li>opt out of the NHS Pension Scheme</li>
         <li>stop making pension contributions</li>
-        <li>complete the SD502 form</li>
       </ul>
-
+      
+      <p>This form was previously called the SD502 form.</p>
       <p>Opting out takes about 10 minutes</p>
-
-
       <h2 class="nhsuk-heading-m">Before you start</h2>
-      <p>If you are an employee, you will need a contact email for the Payroll Department at your employer.</p>
+      <p>There are two parts to this form. The first is for completion by the employee. The second is for completion by the authority (the employer).
+      <p>If you are an employee, you will need:</p>
+      <ul>
+        <li>a contact email for the Payroll Department at your employer.</li>
+        <li>your payroll number, you will find this on a payslip or your employer will be able to tell you this.</li>
+      </ul> 
       <p>You can also <a href="#">opt out by post</a>.
       <p>This service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
         
       <h2 class="nhsuk-heading-m">Help and guidance</h2>
-      <p>Your employer cannot ask or force you to opt out.</p>
-      <p>Deciding to opt out of your employer’s occupational pension scheme is a major financial decision. If you are
-        in any doubt about which pension arrangement will be best for you, you may wish to seek independent financial advice.</p>
+      {% from 'warning-callout/macro.njk' import warningCallout %}
+
+      {{ warningCallout({
+        "heading": "Your employer cannot ask or force you to opt out",
+        "HTML": "<p>Deciding to opt out of your employer’s occupational pension scheme is a major financial decision. If you are
+          in any doubt about which pension arrangement will be best for you, you may wish to seek independent financial advice.</p>"
+      }) }}
+      <!--       
       <p>The benefits payable from the NHS Pension Scheme are valuable and anyone considering opting out of the Scheme should think very carefully before making such an important decision.</p>
-      <p>The pension scheme member guide, factsheets and help can be found on the <a href="https://www.nhsbsa.nhs.uk/nhs-pensions">NHS pensions website</a>.</p>
-      <p>The pension scams awareness booklet for members is available on the <a href="https://www.thepensionsregulator.gov.uk/en/pension-scams">Pensions Regulator website</a>.
       <ul>
         <li>As a Scheme member you pay a contribution based on your pensionable pay. Your NHS employer also contributes 20.6% of your salary towards your pension.</li>
         <li>Contributions are deducted before tax so you receive tax relief on any amount you pay.</li>
@@ -66,18 +72,43 @@ first month.</li>
         <li>Enhanced ill health retirement benefits if you become too ill to work.</li>
         <li>Life assurance cover (a lump sum payment) and family benefits if you die – pension benefits for your
       dependants, including children.</li>
-      </ul>
-      <h3 class="nhsuk-heading-s">Related reading</h3>
-      <ul>
-        <li><a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-11/Leaving%20Early%20and%20Transferring%20Out%20Guide%20%28V16%29%20-%2011.2018.pdf">Leaving early and transferring out guide for members of the NHS Pension Scheme</a></li>
-        <li><a href="https://www.nhsbsa.nhs.uk/sites/default/files/2019-03/1995-2008%20Members%20Guide%20%28V22%29%2002.2019.pdf">1995/2008 NHS Pension Scheme guide for members</a></li>
-      </ul>
+      </ul> -->
+      
 
       <a href="form/user-type" class="nhsuk-button">
         Start now
       </a>
 
     </div>
+    <div class="govuk-grid-column-one-third">
 
+      <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related reading
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.nhsbsa.nhs.uk/nhs-pensions">Pension scheme member guide, factsheets and help on the NHS pensions website</a>
+            </li>
+            <li>
+                <a href="https://www.thepensionsregulator.gov.uk/en/pension-scams">Pensions Regulator website</a>
+            </li>
+            <li>
+              <a href="#" class="govuk-link govuk-!-font-weight-bold">
+                More information about NHS pensions
+              </a>
+            </li>
+            <li><a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-11/Leaving%20Early%20and%20Transferring%20Out%20Guide%20%28V16%29%20-%2011.2018.pdf">Leaving early and transferring out guide</a></li>
+            <li><a href="https://www.nhsbsa.nhs.uk/sites/default/files/2019-03/1995-2008%20Members%20Guide%20%28V22%29%2002.2019.pdf">1995/2008 NHS Pension Scheme guide</a></li>
+          </ul>
+        </nav>
+        
+        </ul>
+      </aside>
+
+    </div>
   </div>
 {% endblock %}

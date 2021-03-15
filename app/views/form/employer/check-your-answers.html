@@ -1,0 +1,227 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "payroll-contact",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1 class="nhsuk-u-margin-top-4">
+        Check your answers before sending your application
+      </h1>
+
+      <h2>
+        Check your answers
+      </h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Jo Smith"
+            },
+            actions: {
+              items: [
+                {
+                  href: "name",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Reference code"
+            },
+            value: {
+              text: "HDJ2123F"
+            },
+            actions: {
+              items: [
+                {
+                  href: "reference",
+                  text: "Change",
+                  visuallyHiddenText: "reference code"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of employee enrollment"
+            },
+            value: {
+              html: "15 March 2021"
+            },
+            actions: {
+              items: [
+                {
+                  href: "enrollment-date",
+                  text: "Change",
+                  visuallyHiddenText: "date of employee enrollment"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SD502 form been received within the opt out period for a local refund"
+            },
+            value: {
+              "text": "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "receive-sd502",
+                  text: "Change",
+                  visuallyHiddenText: "SD502 received answer"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Employment authority or General Practice code"
+            },
+            value: {
+              text: "A128"
+            },
+            actions: {
+              items: [
+                {
+                  href: "ea-gp-code",
+                  text: "Change",
+                  visuallyHiddenText: "employment authority or General Practice code"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Employee job capacity code"
+            },
+            value: {
+              text: "8 - Dental Officer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-code",
+                  text: "Change",
+                  visuallyHiddenText: "job code"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Employee NHS pay band"
+            },
+            value: {
+              text: "4"
+            },
+            actions: {
+              items: [
+                {
+                  href: "pay-band",
+                  text: "Change",
+                  visuallyHiddenText: "employee pay band"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Employee membership number"
+            },
+            value: {
+              text: "SD41/98245"
+            },
+            actions: {
+              items: [
+                {
+                  href: "membership-number",
+                  text: "Change",
+                  visuallyHiddenText: "membership number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Work contract"
+            },
+            value: {
+              text: "Full time"
+            },
+            actions: {
+              items: [
+                {
+                  href: "work-contract",
+                  text: "Change",
+                  visuallyHiddenText: "work contract?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Last day of scheme membership"
+            },
+            value: {
+              text: "12 04 2021"
+            },
+            actions: {
+              items: [
+                {
+                  href: "scheme-membership",
+                  text: "Change",
+                  visuallyHiddenText: "last date of scheme membership"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2>
+        Now send you application
+      </h2>
+
+      <p>
+        By submitting this notification you are confirming that:
+      </p>
+      <ul>
+        <li>You have the authority to complete a pension scheme opt out on behalf of the business.</li>
+      </ul>
+
+      <p>
+        Your details will be sent to your the NHS Business Services Authority and your employer to begin your withdrawal from the NHS pension scheme.
+      </p>
+
+      <a href="confirmation-page" class="nhsuk-button">
+        Accept and send registration
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

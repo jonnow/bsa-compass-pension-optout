@@ -18,25 +18,16 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="email" method="post" class="form">
+      <form action="changed-name" method="post" class="form">
         <h1 class="nhsuk-heading-l">What is your name?</h1>
         {% from 'input/macro.njk' import input %}
 
         {{ input({
           "label": {
-            "text": "First name"
+            "text": "Full name"
           },
-          "id": "first-name",
-          "name": "first-name",
-          "classes": "nhsuk-input--width-10"
-        }) }}
-
-        {{ input({
-          "label": {
-            "text": "Last name"
-          },
-          "id": "last-name",
-          "name": "last-name",
+          "id": "full-name",
+          "name": "full-name",
           "classes": "nhsuk-input--width-10"
         }) }}
 

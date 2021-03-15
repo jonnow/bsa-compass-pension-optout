@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Date of birth
+  Employment details - Last day of scheme membership
 {% endblock %}
 
 {% block outerContent %}
   {{ backLink({
-    "href": "email",
+    "href": "work-contract",
     "text": "Back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -18,7 +18,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="address" method="post" class="form">
+      <form action="check-your-answers" method="post" class="form">
         {% from 'date-input/macro.njk' import dateInput %}
 
         {{ dateInput({
@@ -26,7 +26,7 @@
           "namePrefix": "example",
           "fieldset": {
             "legend": {
-              "text": "What is your date of birth?",
+              "text": "What is the employee's last day of scheme membership?",
               "classes": "nhsuk-label--l",
               "isPageHeading": true
             }

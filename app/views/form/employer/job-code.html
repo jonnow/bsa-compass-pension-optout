@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Application reference
+  Employment details - Job code
 {% endblock %}
 
 {% block outerContent %}
   {{ backLink({
-    "href": "/form/user-type",
+    "href": "ea-gp-code",
     "text": "Back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -18,23 +18,33 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="name" method="post" class="form">
+      <form action="pay-band" method="post" class="form">
 
         {% from 'input/macro.njk' import input %}
 
         {{ input({
           "label": {
-            "text": "What is the reference that you are completing this form for",
+            "text": "What is the employee's job capacity code",
             "classes": "nhsuk-label--l",
             "isPageHeading": true
           },
           "hint": {
-            "text": "The reference can be found in the email you will have received about the employee that has requested to opt out. For example, 'ABC1234Z'"
+            "text": "If you are unsure about this code you can contact NHS pensions"
           },
-          "id": "reference-code",
-          "name": "reference-code",
-          "classes": "nhsuk-input--width-10"
+          "id": "job-code",
+          "name": "job-code",
+          "classes": "nhsuk-input--width-4"
         }) }}
+
+        <h2 class="nhsuk-heading-m">Get help with job capacity code</h2>
+
+        <ul class="govuk-list">
+          <li>Telephone: 020 7946 0101</li>
+          <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+        </ul>
+        <p class="govuk-body">
+          <a class="govuk-link" href="#">Find out about call charges</a>
+        </p>
 
         {{ button({
           "text": "Continue",
